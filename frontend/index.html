@@ -1,0 +1,146 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title> Musiconda </title>
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <main class="container">
+            <!-- HERO -->
+
+            <section class="hero">
+                <div class="badge"> AI MUSIC ANALYSIS </div>
+
+                <h1>
+                    Find the chords
+                    <span>instantly.</span>
+                </h1>
+
+                <p>
+                    Paste a YouTube URL and analyze the harmonic structure of
+                    the song.
+                </p>
+            </section>
+
+            <!-- INPUT -->
+
+            <section class="analyzer">
+                <div class="input-wrapper">
+                    <input
+                        id="youtubeUrl"
+                        type="url"
+                        placeholder="Paste YouTube URL..."
+                        autocomplete="off"
+                    />
+
+                    <button id="analyzeButton"> Analyze </button>
+                </div>
+
+                <!-- STATUS -->
+
+                <div id="status" class="status hidden">
+                    <div class="loader"></div>
+
+                    <span id="statusText"> Analyzing audio... </span>
+                </div>
+            </section>
+
+            <!-- RESULTS -->
+
+            <section id="results" class="results hidden">
+                <!-- SONG INFO -->
+
+                <div class="song-info">
+                    <div>
+                        <div class="small-label"> ANALYSIS </div>
+
+                        <h2> Chord Analysis </h2>
+                    </div>
+
+                    <div id="keyDisplay" class="key"> C major </div>
+                </div>
+
+                <!-- STATS -->
+
+                <div class="stats">
+                    <div class="stat">
+                        <span> Key </span>
+
+                        <strong id="keyStat"> — </strong>
+                    </div>
+
+                    <div class="stat">
+                        <span> BPM </span>
+
+                        <strong id="bpmStat"> — </strong>
+                    </div>
+
+                    <div class="stat">
+                        <span> Duration </span>
+
+                        <strong id="durationStat"> — </strong>
+                    </div>
+
+                    <div class="stat">
+                        <span>Unique Chords</span>
+
+                        <strong id="chordCountStat"> — </strong>
+                    </div>
+                </div>
+
+                <!-- AUDIO -->
+
+                <div class="player">
+                    <div class="player-title"> Audio </div>
+
+                    <audio id="audioPlayer" controls preload="metadata"></audio>
+                </div>
+
+                <!-- CHORD TIMELINE -->
+
+                <div class="timeline-section">
+                    <div class="section-header">
+                        <h3> Chord Timeline </h3>
+
+                        <span> Click a chord to jump </span>
+                    </div>
+
+                    <div id="chordTimeline" class="chord-timeline"></div>
+                </div>
+
+                <!-- PROGRESSION -->
+
+                <div class="progression-section">
+                    <div class="section-header">
+                        <h3> Progression </h3>
+                    </div>
+
+                    <div id="progression" class="progression"></div>
+                </div>
+
+                <!-- CHORD STATISTICS -->
+
+                <div class="breakdown-section">
+                    <div class="section-header">
+                        <h3> Chord Usage </h3>
+                    </div>
+
+                    <div id="chordBreakdown" class="breakdown"></div>
+                </div>
+            </section>
+
+            <!-- ERROR -->
+
+            <div id="error" class="error hidden"></div>
+        </main>
+
+        <script src="app.js"></script>
+    </body>
+</html>
